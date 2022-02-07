@@ -47,6 +47,13 @@
 
     <br />
 
+    <h2>Filtered Books</h2>
+    <ul>
+      <li v-for="filteredBook in filteredBooks">
+        <p>{{ filteredBook.title }}</p>
+      </li>
+    </ul>
+
     <button @click="toggleShowBooks">
       <span v-if="showBooks">Hide Books</span>
       <span v-else>Show Books</span>

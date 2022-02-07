@@ -7,18 +7,35 @@
   <title>Learning Vue 3 with bongudth</title>
   <script src="https://unpkg.com/vue@3.0.2"></script>
   <style>
-    img {
-      height: 100px;
-      width: 200px;
-      object-fit: cover;
+    body {
+      background: #eee;
+      max-width: 960px;
+      margin: 20px auto;
     }
-    .box {
-      padding: 100px 0;
-      width: 400px;
-      text-align: center;
-      background: #ddd;
-      margin: 20px;
-      display: inline-block;
+    p, h3, ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      width: 300px;
+      list-style-type: none;
+      background: #fff;
+      margin: 20px auto;
+      padding: 10px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+    li.fav {
+      background: #ff9ed2;
+      color: #fff;
+    }
+    img {
+      width: 200px;
+      height: 100px;
+      object-fit: cover;
     }
   </style>
 </head>
@@ -36,7 +53,7 @@
     </button>
     <div v-if="showBooks">
       <ul>
-        <li v-for="book in books">
+        <li v-for="book in books" :class="{ fav: book.isFav }" @click="toggleFav(book)">
           <img :src="book.url" :alt="book.title">
           <h3>{{ book.title }}</h3>
           <p>{{ book.author }}</p>
@@ -44,13 +61,6 @@
       </ul>
     </div>
     <div v-show="showBooks">currently show books</div>
-
-    <br />
-
-    <div class="box" @mouseover="handleEvent($event, 5)">mouseover (enter)</div>
-    <div class="box" @mouseleave="handleEvent">mouseleave</div>
-    <div class="box" @dblclick="handleEvent">double click</div>
-    <div class="box" @mousemove="handleMouseMove">mouse move position ({{ x }}, {{ y }})</div>
   </div>
 
   <script src="app.js"></script>

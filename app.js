@@ -4,18 +4,22 @@ const app = Vue.createApp({
       showBooks: true,
       books: [
         {
+          url: 'assets/book1.jpg',
           title: 'The Design of EveryDay Things',
           author: 'Don Norman',
         },
         {
+          url: 'assets/book2.jpg',
           title: 'The Most Human Human',
           author: 'Brian Christian',
         },
         {
+          url: 'assets/book3.png',
           title: 'The Design of Everyday Things',
           author: 'Don Norman',
         },
-      ]
+      ],
+      url: 'https://www.google.com',
     }
   },
   methods: {

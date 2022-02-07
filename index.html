@@ -7,6 +7,11 @@
   <title>Learning Vue 3 with bongudth</title>
   <script src="https://unpkg.com/vue@3.0.2"></script>
   <style>
+    img {
+      height: 100px;
+      width: 200px;
+      object-fit: cover;
+    }
     .box {
       padding: 100px 0;
       width: 400px;
@@ -21,6 +26,10 @@
   <h1>Hello World!</h1>
 
   <div id="app">
+    <a v-bind:href="url">website</a>
+
+    <br />
+
     <button @click="toggleShowBooks">
       <span v-if="showBooks">Hide Books</span>
       <span v-else>Show Books</span>
@@ -28,6 +37,7 @@
     <div v-if="showBooks">
       <ul>
         <li v-for="book in books">
+          <img :src="book.url" :alt="book.title">
           <h3>{{ book.title }}</h3>
           <p>{{ book.author }}</p>
         </li>

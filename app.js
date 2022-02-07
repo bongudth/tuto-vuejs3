@@ -2,11 +2,20 @@ const app = Vue.createApp({
   data() {
     return {
       showBooks: true,
-      title: 'The Final Empire',
-      author: 'George R. R. Martin',
-      age: 45,
-      x: 0,
-      y: 0,
+      books: [
+        {
+          title: 'The Design of EveryDay Things',
+          author: 'Don Norman',
+        },
+        {
+          title: 'The Most Human Human',
+          author: 'Brian Christian',
+        },
+        {
+          title: 'The Design of Everyday Things',
+          author: 'Don Norman',
+        },
+      ]
     }
   },
   methods: {
